@@ -12,14 +12,60 @@ var content = {
 
 function writePassword() {
   var random = " ";
-  
+
+  //prompt//
+  var legnth = prompt("Choose your password length! Min 8 Max 128");
+  if(length <8 || length > 128) {
+  alert("Select a minimum of 8 characters.");
+  var length = prompt("Choose your password length! Min 8 Max 128");  
 }
 
-var legnth = prompt("Choose your password length! Min 8 Max 128");
-if(length <8 || length > 128) {
-alert("Select a minimum of 8 characters.");
-var length = prompt("Choose your password length! Min 8 Max 128")
+  // selected info
+  if (upper && lower && specialChar && numberic|| 
+      upper !=true && lower && specialChar && numberic||
+      upper && lower !=true && specialChar && numberic|| 
+      upper && lower && specialChar !=true && numberic |
+      upper && lower && specialChar && numberic != true||
+      upper !=true && lower !=true && specialChar !=true && numberic !=true||
+      upper !=true && lower !=true && specialChar !=true && numberic||
+      upper && lower !=true && specialChar !=true && numberic !=true||
+      upper !=true && lower && specialChar !=true && numberic !=true||
+      upper !=true && lower !=true && specialChar && numberic !=true||
+      upper !=true && lower !=true && specialChar && numberic ||
+      upper !=true && lower && specialChar !=true && numberic ||
+      upper !=true && lower && specialChar && numberic !=true||
+      upper && lower !=true && specialChar !=true && numberic||
+      upper && lower !=true && specialChar && numberic !=true||
+      upper  && lower && specialChar !=true && numberic !=true||
+  )
+      alert("Select a minimum of 3 variables for your new password.")
+      var lower = confirm("Do you want to use lowercase letters?")
+      var upper = confirm("Do you want to use UPPERCASE letters?")
+      var specialChar = confirm ("Do you want to use $pec!@l Ch@r@acter$?")
+      var numberic = confirm ("Do you want to use any numbers? 0-9")
+
+      if(upper && lower && specialChar && numberic){
+        content.options +=content.upper + content.lower + content.specialChar + content.numberic;
+      }
+      else if(!upper && lower && specialChar && numberic){
+        content.options += + content.lower + content.specialChar + content.numberic;
+      }
+      else if(upper && !lower && specialChar && numberic){
+        content.options +=content.upper + content.specialChar + content.numberic;
+      }
+      else if(upper && lower && !specialChar && numberic){
+        content.options +=content.upper + content.lower + content.numberic;
+      }
+      else if(upper && lower && specialChar && !numberic){
+        content.options +=content.upper + content.lower + content.specialChar;
+      }
+
+    
+
+
 }
+
+
 
 
 
