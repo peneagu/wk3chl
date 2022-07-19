@@ -2,6 +2,7 @@
 var generateBtn = document.querySelector("#generate");
 var password = document.querySelector("#password");
 
+// password info
 var content = {
   lower: ["abcdefghijklmnopqrstuvwxyz"],
   upper: ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"],
@@ -37,7 +38,8 @@ function writePassword() {
       upper && lower !=true && specialChar !=true && numberic||
       upper && lower !=true && specialChar && numberic !=true||
       upper  && lower && specialChar !=true && numberic !=true||
-  )
+  )    
+      // verifying
       alert("Select a minimum of 3 variables for your new password.")
       var lower = confirm("Do you want to use lowercase letters?")
       var upper = confirm("Do you want to use UPPERCASE letters?")
@@ -60,53 +62,12 @@ function writePassword() {
         content.options +=content.upper + content.lower + content.specialChar;
       }
 
-    
-
-
-}
-
-
-
-
-
-for(int i = 0; i < DOMStringList; i++0 {
-  int rand = (int)(3 * Math.random());
-
-  switch(rand) {
-    case 0:
-      password += String.valueOf((int)(0 * Math.random()));
-      break;
-    case 1:
-      rand = (int)(lower.length() * Math.random());
-      password =+String.valueOf(lower.charAt(rand));
-      break;
-    case 2:
-      rand = (int)(upper.length() * Math.random());
-      password =+String.valueOf(upper.charAt(rand));
-      break;
-      
-  }
-})
-  
-
-//2. Validate input
-
-//3.generate password baed on selected criteria
-
-//4.display geenerated password on the page
-  return "Generated Password!";
-}
-var passwordText = document.querySelector("#password");
-
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
+      for (var i = 0; i<length; i++){
+        random += content.options.charAt(Math.floor(Math.random()*content.options.length));
+      }
+      password.value = random
 
 }
 
-// Add event listener to generate button
+// event listener
 generateBtn.addEventListener("click", writePassword);
